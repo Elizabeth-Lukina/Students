@@ -1,240 +1,34 @@
-<!DOCTYPE html>
-<html lang="ru">
+.hexagon {
+  width: 60px;
+  height: 34.64px; /* это соответствует половине высоты правильного гексагона */
+  background-color: #3498db;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  animation: combinedAnimation 6s infinite;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рисунок</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-
-        .container {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .cylinder {
-            width: 40px;
-            height: 200px;
-            background: linear-gradient(to bottom, #e48466, #869cc7);
-            border-radius: 10px;
-            border: 1px solid #7f8c8d;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .oval {
-            width: 28px;
-            height: 60px;
-            background-color: #cecece;
-            border: 0.5px solid #1c1d1d;
-            border-radius: 45%;
-            margin-bottom: 0px;
-            animation: moveUpDown 2s infinite alternate;
-            animation-timing-function: ease-in-out;
-            animation-delay: 0.5s;
-        }
-
-        .rectangle {
-            width: 28px;
-            height: 25px;
-            background-color: #515151;
-            border: 0.5px solid #1c1d1d;
-            border-radius: 2px;
-            margin-bottom: 0px;
-            animation: moveUpDown 2s infinite alternate;
-        }
-
-        .rectangle1 {
-            width: 35px;
-            height: 40px;
-            background-color: #515151;
-            border: 0.5px solid #1c1d1d;
-            border-radius: 2px;
-            animation: moveUpDown 2s infinite alternate;
-        }
-
-        .rectangle2 {
-            width: 15px;
-            height: 30px;
-            background-color: #515151;
-            border: 0.5px solid #1c1d1d;
-            border-radius: 2px;
-            animation: moveUpDown 2s infinite alternate;
-        }
-
-        .rod {
-            width: 3px;
-            height: 200px;
-            background-color: #34495e;
-            position: absolute;
-            top: 82px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: moveUpDown 2s infinite alternate;
-        }
-
-        .tube {
-            position: absolute;
-            width: 5px;
-            height: 82px;
-            background: linear-gradient(to bottom, #e48466, #e1a18d);
-            left: 10px;
-            top: 5px;
-            border: none;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 2.5px;
-        }
-
-        .square {
-            width: 30px;
-            height: 30px;
-            background: linear-gradient(to bottom, #e1a18d, rgb(195, 221, 237));
-            border: none;
-            position: absolute;
-            top: 80px;
-            left: -3px;
-        }
-
-        .tube2 {
-            position: absolute;
-            width: 5px;
-            height: 52px;
-            background: linear-gradient(to bottom, rgb(195, 221, 237), #869cc7);
-            left: 10px;
-            top: 110px;
-            border: none;
-            border-bottom-left-radius: 2.5px;
-        }
-
-        .tube-return {
-            position: absolute;
-            width: 50px;
-            height: 4px;
-            border: none;
-            border-radius: 2px;
-        }
-
-        .lower {
-            border-top-left-radius: 5px;
-            left: 10px;
-            top: 160px;
-            z-index: -2;
-            background-color: #869cc7;
-        }
-
-        .upper {
-            left: 10px;
-            top: 5px;
-            background-color: #e48466;
-        }
-
-        .flywheel {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 1px solid #7f8c8d;
-            background-color: #f9e79f;
-        }
-
-        .flywheel.left {
-            left: 50%;
-            transform: translate(-100%, 50%);
-            bottom: -20px;
-        }
-
-        .flywheel.right {
-            left: 50%;
-            transform: translate(0%, 50%);
-            bottom: -20px;
-        }
-
-        .inner-circle {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: yellow;
-            border: 1px solid #7f8c8d;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .hexagon {
-            position: relative;
-            top: -7px;
-            bottom: 10px;
-            z-index: 2;
-            animation: scaling 2s infinite alternate;
-            transform-origin: center;
-        }
-
-        @keyframes moveUpDown {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(80px);
-            }
-        }
-
-        @keyframes scaling {
-            0% {
-                transform: translate(0, 10%) scale(0.5, 2);
-            }
-
-            100% {
-                transform: translate(0, 100%) scale(1, 0.5);
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="cylinder">
-            <div class="oval"></div>
-            <div class="rectangle"></div>
-            <div class="rectangle1"></div>
-            <div class="rectangle2"></div>
-        </div>
-        <div class="tube-return upper"></div>
-        <div class="grad">
-            <div class="tube"></div>
-            <div class="square"></div>
-            <div class="tube2"></div>
-        </div>
-        <div class="tube-return lower"></div>
-        <div class="rod"></div>
-        <svg class="hexagon" width="150" height="50" viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="15,25
-                       45,45
-                       105,45
-                       135,25
-                       105,5
-                       45,5" style="fill: none; stroke: #7f8c8d; stroke-width: 1;" />
-        </svg>
-        <div class="flywheel left">
-            <div class="inner-circle"></div>
-        </div>
-        <div class="flywheel right">
-            <div class="inner-circle"></div>
-        </div>
-    </div>
-</body>
-
-</html>
+@keyframes combinedAnimation {
+  0% {
+    transform: translateY(0px) scale(1); /* Исходное положение */
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(16px) scale(1.2); /* Подъем гексагону */
+    opacity: 0; /* Исчезновение */
+  }
+  50% {
+    transform: translateY(32px) scale(1.2); /* Ещё ниже */
+    opacity: 1; /* Появление */
+  }
+  75% {
+    transform: translateY(48px) scale(1);
+    opacity: 1; /* Гексагон полностью видимый */
+  }
+  100% {
+    transform: translateY(64px) scale(1);
+    opacity: 1; /* Конечная позиция с полным видимым объектом */
+  }
+}

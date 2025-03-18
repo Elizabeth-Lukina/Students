@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagon Animation</title>
+    <style>
+        /* Общие стили */
+        .container {
+            position: relative;
+            width: 200px;
+            height: 400px;
+            margin: 100px auto;
+        }
+        .hexagon {
+            position: absolute;
+            top: 50%; /* Центр экрана */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: center;
+        }
+
+        /* Анимация для переключения гексагонов */
+        .hex1 {
+            animation: fadeInOut 4s infinite;
+        }
+        .hex2 {
+            animation: fadeInOutOffset 4s infinite;
+        }
+
+        .hex3 {
+            animation: fadeInOut 4s infinite;
+        }
+        .hex4 {
+            animation: fadeInOutOffset 4s infinite;
+        }
+
+        /* Определение анимаций */
+        @keyframes fadeInOut {
+            0%, 50% {
+                opacity: 1;
+                transform: scale(1) translate(-50%, -50%);
+            }
+            51%, 100% {
+                opacity: 0;
+                transform: scale(0.8) translate(-50%, -50%);
+            }
+        }
+
+        @keyframes fadeInOutOffset {
+            0%, 50% {
+                opacity: 0;
+                transform: scale(0.8) translate(-50%, -50%);
+            }
+            51%, 100% {
+                opacity: 1;
+                transform: scale(1) translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Первый гексагон -->
+        <svg class="hexagon hex1" width="50" height="150" viewBox="0 0 50 150" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="5,75
+                             15,45
+                             35,45
+                             45,75
+                             35,105
+                             15,105" style="fill: none; stroke: #7f8c8d; stroke-width: 1;"/>
+        </svg>
+
+        <!-- Второй гексагон -->
+        <svg class="hexagon hex2" width="100" height="200" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="10,100
+                             30,50
+                             70,50
+                             90,100
+                             70,150
+                             30,150" style="fill: none; stroke: #7f8c8d; stroke-width: 1;"/>
+        </svg>
+
+        <!-- Третий гексагон -->
+        <svg class="hexagon hex3" width="135" height="50" viewBox="0 0 135 50" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="10,25
+                             40,5
+                             95,5
+                             125,25
+                             95,45
+                             40,45" style="fill: none; stroke: #7f8c8d; stroke-width: 1;"/>
+        </svg>
+
+        <!-- Четвертый гексагон -->
+        <svg class="hexagon hex4" width="100" height="200" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="10,100
+                             30,50
+                             70,50
+                             90,100
+                             70,150
+                             30,150" style="fill: none; stroke: #7f8c8d; stroke-width: 1;"/>
+        </svg>
+    </div>
+</body>
+</html>
