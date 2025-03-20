@@ -79,7 +79,7 @@
             background-color: #34495e;
             position: absolute;
             top: 82px;
-            left: 50%;
+            left: 49%;
             transform: translateX(-50%);
             animation: moveUpDown 2s infinite alternate;
             animation-timing-function: ease-in-out;
@@ -179,6 +179,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
         }
 
         .hexagon {
@@ -188,7 +189,7 @@
             z-index: 2;
             animation: moveUpDown 2s infinite alternate;
             transform-origin: center;
-            bottom: 70px;
+            bottom: 95px;
         }
         @keyframes moveUpDown {
             0% { transform: translateY(0px); }
@@ -217,36 +218,65 @@
     </div>
 
     <div class="rod"></div>
-<div class="rod"></div>
-<svg class= "hexagon" width="200" height="300">
-    <polygon
-        fill="none"
-        stroke="black"
-        points="35,175 50,100 70,100 85,175 70,250 50,250">
-        <animate
-            attributeName="points"
-            dur="2s"
-            repeatCount="indefinite"
-            calcMode="linear"
-            values="35,125 50,200 70,200 85,125 70,50 50,50;
-                   10,100 50,150 70,150 110,100 70,50 50,50;
-                   -15,75 50,100 70,100 135,75 70,50 50,50;
-                   10,100 50,150 70,150 110,100 70,50 50,50;
-                   35,125 50,200 70,200 85,125 70,50 50,50"/>
-    </polygon>
-</svg>
-<div class="flywheel left">
-    <div class="inner-circle"></div>
-</div>
-<div class="flywheel right">
-    <div class="inner-circle"></div>
-</div>
-<div class="flywheel left">
-    <div class="inner-circle"></div>
-</div>
-<div class="flywheel right">
-    <div class="inner-circle"></div>
-</div>
+    <div class="rod"></div>
+    <svg class="hexagon" width="200" height="300">
+        <polygon
+                fill="none"
+                stroke="black"
+                points="35,125 50,175 70,175 85,125 70,75 50,75">
+            <animate
+                    attributeName="points"
+                    dur="2s"
+                    repeatCount="indefinite"
+                    calcMode="linear"
+                    values="35,125 50,175 70,175 85,125 70,75 50,75;
+                35,125 50,175 70,175 85,125 70,75 50,75;
+                35,125 50,175 70,175 85,125 70,75 50,75;
+                35,125 50,175 70,175 85,125 70,75 50,75;
+                35,125 50,175 70,175 85,125 70,75 50,75;
+                35,125 50,175 70,175 85,125 70,75 50,75;
+                35,125 50,175 70,175 85,125 70,75 50,75;
+
+                30,125 50,170 70,170 90,125 70,75 50,75;
+                30,125 50,170 70,170 90,125 70,75 50,75;
+25,125 50,165 70,165 95,125 70,75 50,75;
+25,125 50,165 70,165 95,125 70,75 50,75;
+20,125 50,160 70,160 100,125 70,75 50,75;
+20,125 50,160 70,160 100,125 70,75 50,75;
+15,125 50,155 70,155 105,125 70,75 50,75;
+15,125 50,155 70,155 105,125 70,75 50,75;
+
+                   10,125 50,150 70,150 110,125 70,75 50,75;
+
+                   -15,100 50,125 70,125 135,100 70,75 50,75;
+
+                   -10,99 50,130 70,130 130,99 70,75 50,75;
+                    -5,98 50,135 70,135 125,98 70,75 50,75;
+                    0,97 50,140 70,140 120,97 70,75 50,75;
+                    5,96 50,145 70,145 115,96 70,75 50,75;
+
+                   10,95 50,150 70,150 110,95 70,75 50,75;
+                   15,102 50,155 70,155 105,102 70,75 50,75;
+20,109 50,160 70,160 100,109 70,75 50,75;
+25,116 50,165 70,165 95,116 70,75 50,75;
+30,122 50,170 70,170 90,122 70,75 50,75;
+
+                   35,125 50,175 70,175 85,125 70,75 50,75;
+                   35,125 50,175 70,175 85,125 70,75 50,75"/>
+        </polygon>
+    </svg>
+    <div class="flywheel left">
+        <div class="inner-circle"></div>
+    </div>
+    <div class="flywheel right">
+        <div class="inner-circle"></div>
+    </div>
+    <div class="flywheel left">
+        <div class="inner-circle"></div>
+    </div>
+    <div class="flywheel right">
+        <div class="inner-circle"></div>
+    </div>
     <div class="flywheel left">
         <div class="inner-circle"></div>
     </div>
