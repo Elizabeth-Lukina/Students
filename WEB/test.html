@@ -1,9 +1,64 @@
-<svg class="hexagon" width="250" height="150" viewbox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
-<polygon points="35,175 50,100 70,100 85,175 70,250 50,250" style="fill:none;stroke:#7f8c8d;stroke-width:1">
-<animate attributename="points" dur="2s" repeatcount="indefinite" values="
-60,175 60,125 75,125 85,175 75,225 60,225;
-35,175 50,100 70,100 85,175 70,250 50,250;
-60,175 60,125 75,125 85,175 75,225 60,225">
-<animate attributename="transform" dur="2s" repeatcount="indefinite" type="translate" values="0,0; 0,80; 0,0" additive="sum" transform-origin="60 250">
-</polygon>
+<svg width="200" height="300">
+    <polygon fill="none" stroke="black" >
+        <animate
+            attributeName="points"
+            dur="5s"
+            repeatCount="indefinite"
+            values="35,175 50,100 70,100 85,175 70,250 50,250;
+                   10,200 50,100 70,100 110,200 70,250 50,250;
+                   -15,225 50,100 70,100 135,225 70,250 50,250;
+                   10,200 50,100 70,100 110,200 70,250 50,250;
+                   35,175 50,100 70,100 85,175 70,250 50,250"/>
+    </polygon>
 </svg>
+
+
+<svg width="200" height="300">
+    <polygon
+        fill="none"
+        stroke="black"
+        points="35,175 50,100 70,100 85,175 70,250 50,250">
+        <animate
+            attributeName="points"
+            dur="3s"
+            repeatCount="indefinite"
+            calcMode="linear"
+            values="35,175 50,100 70,100 85,175 70,250 50,250;
+                   10,180 50,330 70,330 110,180 70,130 50,130;
+                   -15,155 50,280 70,280 135,155 70,130 50,130;
+                   10,180 50,330 70,330 110,180 70,130 50,130;
+                   35,125 50,250 70,250 85,125 70,50 50,50"/>
+    </polygon>
+</svg>
+
+<div class="rod"></div>
+<svg width="200" height="300">
+    <polygon
+        fill="none"
+        stroke="black"
+        points="35,125 50,200 70,200 85,125 70,50 50,50">
+        <animate
+            attributeName="points"
+            dur="5s"
+            repeatCount="indefinite"
+            values="35,125 50,200 70,200 85,125 70,50 50,50;
+                   10,100 50,150 70,150 110,100 70,50 50,50;
+                   -15,75 50,100 70,100 135,75 70,50 50,50;
+                   10,100 50,150 70,150 110,100 70,50 50,50;
+                   35,125 50,200 70,200 85,125 70,50 50,50"/>
+
+
+        <animate
+            attributeName="transform"
+            dur="3s"
+            repeatCount="indefinite"
+            values="translate(0,0); translate(0,80); translate(0,0)"
+            additive="sum"/>
+    </polygon>
+</svg>
+<div class="flywheel left">
+    <div class="inner-circle"></div>
+</div>
+<div class="flywheel right">
+    <div class="inner-circle"></div>
+</div>
