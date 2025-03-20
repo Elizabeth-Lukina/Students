@@ -40,9 +40,9 @@
             border: 0.5px solid #1c1d1d;
             border-radius: 45%;
             margin-bottom: 0px;
-            animation: moveUpDown 2s infinite alternate;
+            animation: moveUpDown 0.75s infinite alternate;
             animation-timing-function: ease-in-out;
-            animation-delay: 0.5s;
+            animation-delay: 0.18s;
         }
 
         .rectangle {
@@ -52,7 +52,7 @@
             border: 0.5px solid #1c1d1d;
             border-radius: 2px;
             margin-bottom: 0px;
-            animation: moveUpDown 2s infinite alternate;
+            animation: moveUpDown 0.75s infinite alternate;
         }
 
         .rectangle1 {
@@ -61,7 +61,7 @@
             background-color: #515151;
             border: 0.5px solid #1c1d1d;
             border-radius: 2px;
-            animation: moveUpDown 2s infinite alternate;
+            animation: moveUpDown 0.75s infinite alternate;
         }
 
         .rectangle2 {
@@ -70,7 +70,7 @@
             background-color: #515151;
             border: 0.5px solid #1c1d1d;
             border-radius: 2px;
-            animation: moveUpDown 2s infinite alternate;
+            animation: moveUpDown 0.75s infinite alternate;
         }
 
         .rod {
@@ -79,11 +79,11 @@
             background-color: #34495e;
             position: absolute;
             top: 82px;
-            left: 49%;
+            left: 49.5%;
             transform: translateX(-50%);
-            animation: moveUpDown 2s infinite alternate;
+            animation: moveUpDown 0.75s infinite alternate;
             animation-timing-function: ease-in-out;
-            animation-delay: 0.5s;
+            animation-delay: 0.2s;
         }
 
         .grad {
@@ -160,13 +160,13 @@
         .flywheel.left {
             left: 50%;
             transform: translate(-100%, 50%);
-            bottom: 220px;
+            bottom: 230px;
         }
 
         .flywheel.right {
             left: 50%;
             transform: translate(0%, 50%);
-            bottom: 220px;
+            bottom: 230px;
         }
 
         .inner-circle {
@@ -181,20 +181,36 @@
             transform: translate(-50%, -50%);
 
         }
+        .horizontal-line {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #7f8c8d;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.line-left {
+    right: 100%;
+}
+
+.line-right {
+    left: 100%;
+}
 
         .hexagon {
             position: relative;
 
-            left: 41px;
+            left: 40px;
             z-index: 2;
-            animation: moveUpDown 2s infinite alternate;
+            animation: moveUpDown 0.75s infinite alternate;
             transform-origin: center;
-            bottom: 95px;
+            bottom: 46px;
         }
         @keyframes moveUpDown {
             0% { transform: translateY(0px); }
 
-            100% { transform: translateY(80px); }
+            100% { transform: translateY(70px); }
         }
 
 
@@ -219,14 +235,14 @@
 
     <div class="rod"></div>
     <div class="rod"></div>
-    <svg class="hexagon" width="200" height="300">
+    <svg class="hexagon" width="300" height="300" viewBox="-50 50 300 300">
         <polygon
                 fill="none"
                 stroke="black"
                 points="35,125 50,175 70,175 85,125 70,75 50,75">
             <animate
                     attributeName="points"
-                    dur="2s"
+                    dur="1.5s"
                     repeatCount="indefinite"
                     calcMode="linear"
                     values="35,125 50,175 70,175 85,125 70,75 50,75;
@@ -239,50 +255,66 @@
 
                 30,125 50,170 70,170 90,125 70,75 50,75;
                 30,125 50,170 70,170 90,125 70,75 50,75;
-25,125 50,165 70,165 95,125 70,75 50,75;
-25,125 50,165 70,165 95,125 70,75 50,75;
-20,125 50,160 70,160 100,125 70,75 50,75;
-20,125 50,160 70,160 100,125 70,75 50,75;
-15,125 50,155 70,155 105,125 70,75 50,75;
-15,125 50,155 70,155 105,125 70,75 50,75;
+                25,125 50,165 70,165 95,125 70,75 50,75;
+                25,125 50,165 70,165 95,125 70,75 50,75;
+                25,125 50,160 70,160 100,125 70,75 50,75;
+                25,125 50,160 70,160 100,125 70,75 50,75;
+                20,125 50,155 70,155 105,125 70,75 50,75;
 
-                   10,125 50,150 70,150 110,125 70,75 50,75;
+                15,125 50,150 70,150 110,125 70,75 50,75;
 
-                   -15,100 50,125 70,125 135,100 70,75 50,75;
 
-                   -10,99 50,130 70,130 130,99 70,75 50,75;
-                    -5,98 50,135 70,135 125,98 70,75 50,75;
-                    0,97 50,140 70,140 120,97 70,75 50,75;
-                    5,96 50,145 70,145 115,96 70,75 50,75;
+                -20,110 50,125 70,125 135,110 70,75 50,75;
+                -15,105 50,125 70,125 135,105 70,75 50,75;
 
-                   10,95 50,150 70,150 110,95 70,75 50,75;
-                   15,102 50,155 70,155 105,102 70,75 50,75;
-20,109 50,160 70,160 100,109 70,75 50,75;
-25,116 50,165 70,165 95,116 70,75 50,75;
-30,122 50,170 70,170 90,122 70,75 50,75;
 
-                   35,125 50,175 70,175 85,125 70,75 50,75;
+                   -15,105 50,130 70,130 135,105 70,75 50,75;
+                   -15,105 50,130 70,130 135,105 70,75 50,75;
+                    -15,100 50,135 70,135 135,100 70,75 50,75;
+                    -10,99 50,140 70,140 135,99 70,75 50,75;
+                    -10,96 50,145 70,145 135,96 70,75 50,75;
+
+                   -5,95 50,150 70,150 135,95 70,75 50,75;
+
+                   -5,100 50,155 70,155 130,100 70,75 50,75;
+                    0,105 50,160 70,160 125,105 70,75 50,75;
+                    0,110 50,165 70,165 125,110 70,75 50,75;
+                    5,115 50,170 70,170 110,115 70,75 50,75;
+                    10,125 50,175 70,170 105,125 70,75 50,75;
+
+                    15,125 50,175 70,170 100,125 70,75 50,75;
+                   25,125 50,175 70,170 90,125 70,75 50,75;
                    35,125 50,175 70,175 85,125 70,75 50,75"/>
         </polygon>
     </svg>
     <div class="flywheel left">
-        <div class="inner-circle"></div>
-    </div>
-    <div class="flywheel right">
-        <div class="inner-circle"></div>
-    </div>
-    <div class="flywheel left">
-        <div class="inner-circle"></div>
-    </div>
-    <div class="flywheel right">
-        <div class="inner-circle"></div>
-    </div>
-    <div class="flywheel left">
-        <div class="inner-circle"></div>
-    </div>
-    <div class="flywheel right">
-        <div class="inner-circle"></div>
-    </div>
+    <div class="horizontal-line line-left"></div>
+    <div class="horizontal-line line-right"></div>
+    <div class="inner-circle"></div>
+</div>
+<div class="flywheel right">
+    <div class="horizontal-line line-left"></div>
+    <div class="horizontal-line line-right"></div>
+    <div class="inner-circle"></div>
+</div>
+<div class="flywheel left">
+    <div class="horizontal-line line-left"></div>
+    <div class="inner-circle"></div>
+</div>
+<div class="flywheel right">
+
+    <div class="horizontal-line line-right"></div>
+    <div class="inner-circle"></div>
+</div>
+<div class="flywheel left">
+    <div class="horizontal-line line-left"></div>
+    <div class="inner-circle"></div>
+</div>
+<div class="flywheel right">
+    <div class="horizontal-line line-right"></div>
+    <div class="inner-circle"></div>
+</div>
+
 </div>
 </body>
 </html>
