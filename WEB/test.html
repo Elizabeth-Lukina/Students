@@ -1,34 +1,9 @@
-.hexagon {
-  width: 60px;
-  height: 34.64px; /* это соответствует половине высоты правильного гексагона */
-  background-color: #3498db;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  animation: combinedAnimation 6s infinite;
-}
-
-@keyframes combinedAnimation {
-  0% {
-    transform: translateY(0px) scale(1); /* Исходное положение */
-    opacity: 1;
-  }
-  25% {
-    transform: translateY(16px) scale(1.2); /* Подъем гексагону */
-    opacity: 0; /* Исчезновение */
-  }
-  50% {
-    transform: translateY(32px) scale(1.2); /* Ещё ниже */
-    opacity: 1; /* Появление */
-  }
-  75% {
-    transform: translateY(48px) scale(1);
-    opacity: 1; /* Гексагон полностью видимый */
-  }
-  100% {
-    transform: translateY(64px) scale(1);
-    opacity: 1; /* Конечная позиция с полным видимым объектом */
-  }
-}
+<svg class="hexagon" width="250" height="150" viewbox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+<polygon points="35,175 50,100 70,100 85,175 70,250 50,250" style="fill:none;stroke:#7f8c8d;stroke-width:1">
+<animate attributename="points" dur="2s" repeatcount="indefinite" values="
+60,175 60,125 75,125 85,175 75,225 60,225;
+35,175 50,100 70,100 85,175 70,250 50,250;
+60,175 60,125 75,125 85,175 75,225 60,225">
+<animate attributename="transform" dur="2s" repeatcount="indefinite" type="translate" values="0,0; 0,80; 0,0" additive="sum" transform-origin="60 250">
+</polygon>
+</svg>
