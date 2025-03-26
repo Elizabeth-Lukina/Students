@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер изображений</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #e0f7fa; /* Легкий голубой фон */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #ffffff; /* Белый фон контейнера */
+            border-radius: 15px; /* Более округлые углы */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Более выразительная тень */
+            padding: 20px;
+        }
+
+        .slider {
+            background-color: #f8f8f8; /* Светлый фон слайдера */
+            border: 3px solid #81d4fa; /* Светло-голубая рамка */
+            border-radius: 15px; /* Округленные углы для слайдера */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+            overflow: hidden;
+            width: 100%; /* Заменено на 100% для адаптивности */
+            max-width: 600px; /* Максимальная ширина слайдера */
+            text-align: center;
+        }
+
+        .slider-display {
+            height: 400px;
+        }
+
+        .slide-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Обрезка изображений, чтобы достичь наилучшего эффекта */
+            transition: transform 0.5s ease; /* Плавный переход между изображениями */
+        }
+
+        .controls {
+            display: flex; /* Установка флекс-контейнера */
+            justify-content: center; /* Центрирование кнопок по оси X */
+            margin: 15px 0; /* Увеличен отступ для более просторного интерфейса */
+        }
+
+        .control-btn {
+            background-color: #4CAF50; /* Зеленый цвет кнопок */
+            color: white;
+            border: none;
+            padding: 12px 20px; /* Увеличено пространство внутри кнопок */
+            border-radius: 5px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Плавные переходы при наведении */
+        }
+
+        .control-btn:hover {
+            background-color: #45a049; /* Более темный зеленый при наведении */
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+        }
+
+        .counter {
+            margin: 10px 0; /* Отступ для счетчика */
+            font-size: 20px; /* Увеличен размер шрифта для большей читаемости */
+            font-weight: bold; /* Жирный шрифт для выделения */
+            color: #555; /* Темно-серый цвет текста счетчика */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="slider-title">Веселая жизнь корги Джимми</h1>
+    <div class="slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img id="slide" src="img/1.jpg" alt="Изображение 1" class="slide-img"></div>
+                <div class="swiper-slide"><img src="img/2.jpg" alt="Изображение 2" class="slide-img"></div>
+                <div class="swiper-slide"><img src="img/3.jpg" alt="Изображение 3" class="slide-img"></div>
+                <div class="swiper-slide"><img src="img/4.jpg" alt="Изображение 4" class="slide-img"></div>
+                <div class="swiper-slide"><img src="img/5.jpg" alt="Изображение 5" class="slide-img"></div>
+            </div>
+            <div class="controls">
+                <button class="control-btn" id="prev">Назад</button>
+                <button class="control-btn" id="next">Вперед</button>
+            </div>
+        </div>
+    </div>
+    <div class="counter" id="counter">Изображение 1 из 5</div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+const slides = [
+    "img/1.jpg",
+    "img/2.jpg",
+    "img/3.jpg",
+    "img/4.jpg",
+    "img/5.jpg"
+];
+let currentSlideIndex = 0;
+const totalSlides = slides.length;
+
+const slideImage = document.getElementById('slide');
+const counterDisplay = document.getElementById('counter');
+
+function updateSlider() {
+    slideImage.src = slides[currentSlideIndex];
+    counterDisplay.textContent = `Изображение ${currentSlideIndex + 1} из ${totalSlides}`;
+}
+
+document.getElementById('next').addEventListener('click', () => {
+    currentSlideIndex = (currentSlideIndex + 1) % totalSlides; // зацикливание
+    updateSlider();
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides; // зацикливание
+    updateSlider();
+});
+
+// Инициализация слайдера
+updateSlider();
+</script>
+
+</body>
+</html>
